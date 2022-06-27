@@ -1,11 +1,12 @@
 import "./App.css";
-import SearchInput from "./components/SearchInput";
-function App() {
+import Fraces from "./components/Fraces";
+
+const App = () => {
   return (
     <div className="App">
-      <SearchInput />
+      <Fraces />
     </div>
   );
-}
+};
 
 export default App;
