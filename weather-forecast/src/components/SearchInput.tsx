@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-import sunny from "../components/assents/pictures/sunny.png";
 import Spinner from "react-bootstrap/Spinner";
 import "../index.css";
 
@@ -47,7 +46,7 @@ const SearchInput = () => {
         />
         <Spinner animation="border" variant="light" />
       </div>
-      {data !== undefined && (
+      {data && (
         <div className="container">
           <div className="top">
             <div className="location">
