@@ -5,6 +5,8 @@ import Spinner from "react-bootstrap/Spinner";
 import "../index.css";
 import sunny from "./assents/pictures/sunny.png";
 import clouds from "./assents/pictures/cloud.png";
+import rainy from "./assents/pictures/rainy.png";
+import snow from "./assents/pictures/snow.png";
 
 interface Data {
   name: string;
@@ -23,6 +25,12 @@ const getWeatherIcon = (weather: any) => {
   switch (weather) {
     case "Clear":
       return <img className="icon-sunny" src={sunny} />;
+    case "Clouds":
+      return <img className="icon-sunny" src={clouds} />;
+    case "Rain":
+      return <img className="icon-sunny" src={rainy} />;
+    case "Snow":
+      return <img className="icon-sunny" src={snow} />;
   }
 };
 const Fraces = () => {
