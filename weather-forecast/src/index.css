@@ -38,10 +38,11 @@ input[type="text"] {
   margin: 50px;
   background-color: #f0f8ff;
   border-radius: 20px;
-  width: 25%;
   margin-left: 37%;
   box-shadow: 5px 5px 10px 5px gray;
+  background-image: url("./components//assents/pictures/container-bc.jpg");
   background-size: cover;
+  width: 10%;
 }
 .location {
   font-weight: bold;
@@ -61,5 +62,5 @@ input[type="text"] {
 }
 .nameCity {
   font-size: 45px;
-  color: skyblue;
+  color: #00ffff;
 }

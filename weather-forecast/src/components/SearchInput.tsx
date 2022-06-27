@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css";
+import sunny from "../components/assents/pictures/sunny.png";
+import Spinner from "react-bootstrap/Spinner";
 import "../index.css";
+
 interface Data {
   name: string;
   wind: {
@@ -17,15 +21,12 @@ interface Data {
 const SearchInput = () => {
   const [data, setData] = useState<Data>();
   const [location, setLocation] = useState("");
-
   const key = process.env.REACT_APP_KEY;
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${key}`;
   const searchLocation = (event: any) => {
     if (event.key === "Enter") {
       axios.get(url).then((response) => {
         setData(response.data);
-        console.log(response.data);
-        console.log(response);
       });
       setLocation("");
     }
@@ -44,6 +45,7 @@ const SearchInput = () => {
           placeholder="Enter Location"
           type="text"
         />
+        <Spinner animation="border" variant="light" />
       </div>
       {data !== undefined && (
         <div className="container">
