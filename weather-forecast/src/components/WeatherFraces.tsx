@@ -7,7 +7,6 @@ import sunny from "./assents/pictures/sunny.png";
 import clouds from "./assents/pictures/cloud.png";
 import rainy from "./assents/pictures/rainy.png";
 import snow from "./assents/pictures/snow.png";
-
 interface Data {
   name: string;
   wind: {
@@ -15,6 +14,7 @@ interface Data {
   };
   main: {
     temp: number;
+    feels_like: number;
     humidity: number;
   };
   weather: {
@@ -33,15 +33,18 @@ const getWeatherIcon = (weather: any) => {
       return <img className="icon-sunny" src={snow} />;
   }
 };
-const Celsius = (data: any) => {
+const toCelsus = (data: any) => {
   {
     return (((data.main.temp - 32) * 5) / 9).toFixed();
   }
 };
+const feelsLike = (data: any) => {
+  return (((data.main.feels_like - 32) * 5) / 9).toFixed();
+};
 
 const WeatherFraces = () => {
   const [data, setData] = useState<Data>();
-  const [spinner, setSpinner] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   const [location, setLocation] = useState("");
   const key = process.env.REACT_APP_KEY;
@@ -50,7 +53,7 @@ const WeatherFraces = () => {
     if (event.key === "Enter") {
       axios.get(url).then((response) => {
         setData(response.data);
-        setSpinner(true);
+        setLoading(false);
       });
       setLocation("");
     }
@@ -69,7 +72,7 @@ const WeatherFraces = () => {
           placeholder="Enter Location"
           type="text"
         />
-        <Spinner animation="border" variant="light" />
+        {loading && <Spinner animation="border" variant="light" />}
       </div>
 
       {data && (
@@ -82,14 +85,14 @@ const WeatherFraces = () => {
               {getWeatherIcon(data.weather[0].main)}
             </div>
             <div className="temp">
-              {data.main ? <h1>{Celsius(data)}°C</h1> : null}
+              {data.main ? <h1>{toCelsus(data)}°C</h1> : null}
             </div>
           </div>
           {data.name !== undefined && (
             <div className="bottom">
               <div className="feels">
                 <p>Feels Like</p>
-                {data.main ? <h1>{Celsius(data)}°C</h1> : null}
+                {data.main ? <p className="bold">{feelsLike(data)}°C</p> : null}
               </div>
               <div className="humidity">
                 <p>Humidity</p>
