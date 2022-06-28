@@ -33,7 +33,13 @@ const getWeatherIcon = (weather: any) => {
       return <img className="icon-sunny" src={snow} />;
   }
 };
-const Fraces = () => {
+const Celsius = (data: any) => {
+  {
+    return (((data.main.temp - 32) * 5) / 9).toFixed();
+  }
+};
+
+const WeatherFraces = () => {
   const [data, setData] = useState<Data>();
   const [spinner, setSpinner] = useState(true);
 
@@ -76,18 +82,14 @@ const Fraces = () => {
               {getWeatherIcon(data.weather[0].main)}
             </div>
             <div className="temp">
-              {data.main ? (
-                <h1>{(((data.main.temp - 32) * 5) / 9).toFixed()}°C</h1>
-              ) : null}
+              {data.main ? <h1>{Celsius(data)}°C</h1> : null}
             </div>
           </div>
           {data.name !== undefined && (
             <div className="bottom">
               <div className="feels">
                 <p>Feels Like</p>
-                {data.main ? (
-                  <h1>{(((data.main.temp - 32) * 5) / 9).toFixed()}°C</h1>
-                ) : null}
+                {data.main ? <h1>{Celsius(data)}°C</h1> : null}
               </div>
               <div className="humidity">
                 <p>Humidity</p>
@@ -109,4 +111,4 @@ const Fraces = () => {
   );
 };
 
-export default Fraces;
+export default WeatherFraces;

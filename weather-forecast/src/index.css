@@ -42,7 +42,6 @@ input[type="text"] {
   box-shadow: 5px 5px 10px 5px gray;
   background-image: url("./components//assents/pictures/container-bc.jpg");
   background-size: cover;
-  width: 10%;
 }
 .location {
   font-weight: bold;
