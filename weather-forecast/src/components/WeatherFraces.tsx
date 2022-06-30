@@ -8,6 +8,7 @@ import clouds from "./assents/pictures/cloud.png";
 import rainy from "./assents/pictures/rainy.png";
 import snow from "./assents/pictures/snow.png";
 import WfForMyLocation from "./WfForMyLocation";
+import DarkMode from "./DarMode";
 interface Data {
   name: string;
   wind: {
