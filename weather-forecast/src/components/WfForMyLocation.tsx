@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
+import sunny from "./assents/pictures/sunny.png";
 export const WeatherUrlPrefix =
   "https://api.openweathermap.org/data/2.5/forecast";
 
-interface Components {
+interface Fraces {
   temp: number;
   feels_like: number;
 }
 const WfForMyLocation = () => {
-  const [weather, setWeather] = useState<Components>();
+  const [weather, setWeather] = useState<Fraces>();
   const [input, setInput] = useState("Novi Sad");
   const [city, setCity] = useState("Novi Sad");
 
@@ -34,20 +35,13 @@ const WfForMyLocation = () => {
     <div className="second-container">
       <div className="fixed-container">
         <form onSubmit={(e) => changeCity(e)}>
-          <input
-            className="city-input"
-            type="text"
-            value={input}
-            name="city"
-            onChange={(e) => setInput(e.target.value)}
-          />
+          <input className="city-input" type="text" value={input} name="city" />
         </form>
         {weather && (
           <div className="weather-main">
-            <h4 className="temp">Temp : {weather.temp.toFixed()} °C</h4>
-            <h5 className="feels-like">
-              Feels like : {weather.feels_like.toFixed()} °C
-            </h5>
+            <img className="image-container" src={sunny} />
+            <h4 className="temp2"> {weather.temp.toFixed()} °C</h4>
+            <h5 className="feels-like"></h5>
           </div>
         )}
       </div>

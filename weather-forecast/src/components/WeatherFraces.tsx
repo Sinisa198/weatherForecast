@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Spinner from "react-bootstrap/Spinner";
@@ -7,6 +7,7 @@ import sunny from "./assents/pictures/sunny.png";
 import clouds from "./assents/pictures/cloud.png";
 import rainy from "./assents/pictures/rainy.png";
 import snow from "./assents/pictures/snow.png";
+import WfForMyLocation from "./WfForMyLocation";
 interface Data {
   name: string;
   wind: {
@@ -81,7 +82,7 @@ const WeatherFraces = () => {
             <div className="location">
               <p className="nameCity">{data.name}</p>
             </div>
-            <div className="description">
+            <div className="image-icon">
               {getWeatherIcon(data.weather[0].main)}
             </div>
             <div className="temp">
