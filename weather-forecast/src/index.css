@@ -111,7 +111,7 @@ h1 {
   font-weight: bold;
 }
 .nameCity {
-  margin-left: 150px;
+  margin-left: 630px;
   font-size: 45px;
   color: black;
   padding-right: 200px;
@@ -143,6 +143,7 @@ h1 {
   width: 20%;
   margin-left: 70%;
   margin-top: -1200px;
+  text-align: center;
 }
 .fixed-container {
   margin-left: 37%;
@@ -164,8 +165,21 @@ h1 {
   width: 100px;
 }
 .temp {
-  margin-left: -30px;
+  margin-left: 630px;
 }
 .image-icon {
-  margin-left: -40px;
+  margin-left: 590px;
+}
+.city-input {
+  border-radius: 20px;
+  text-align: center;
+}
+.title {
+  text-align: center;
+}
+.span-title {
+  color: skyblue;
+}
+.celsus {
+  margin-left: 200px;
 }
