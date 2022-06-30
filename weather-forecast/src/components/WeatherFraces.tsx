@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Spinner from "react-bootstrap/Spinner";
@@ -47,8 +47,7 @@ const WeatherFraces = () => {
   const [loading, setLoading] = useState(true);
 
   const [location, setLocation] = useState("");
-  const key = process.env.REACT_APP_KEY;
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${key}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${process.env.REACT_APP_KEY}`;
   const searchLocation = (event: any) => {
     if (event.key === "Enter") {
       axios.get(url).then((response) => {
@@ -64,6 +63,7 @@ const WeatherFraces = () => {
       <h1 className="title">
         Weather <span className="span-title">Forecast</span>
       </h1>
+
       <div className="search">
         <input
           value={location}
@@ -72,7 +72,7 @@ const WeatherFraces = () => {
           placeholder="Enter Location"
           type="text"
         />
-        {loading && <Spinner animation="border" variant="light" />}
+        {loading && <Spinner animation="border" variant="success" />}
       </div>
 
       {data && (

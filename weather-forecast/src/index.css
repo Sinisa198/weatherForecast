@@ -16,7 +16,6 @@ code {
 .app {
   text-align: center;
   align-items: center;
-  margin-top: 13%;
 }
 input[type="text"] {
   width: 200px;
@@ -34,7 +33,13 @@ input[type="text"] {
   color: skyblue;
   font-weight: bold;
 }
+.app {
+  width: 700px;
+  margin-left: 1000px;
+  margin-top: 5%;
+}
 .container {
+  height: 650px;
   margin: 50px;
   background-color: #f0f8ff;
   border-radius: 20px;
@@ -61,8 +66,47 @@ input[type="text"] {
 }
 .nameCity {
   font-size: 45px;
-  color: #00ffff;
+  color: black;
 }
 .icon-sunny {
   width: 120px;
+}
+.image-location {
+  width: 80px;
+  margin-right: 43px;
+}
+.main-location {
+  text-align: right;
+  margin: 30px 250px 0 0;
+}
+.celsus {
+  margin-right: 43px;
+  font-size: 35px;
+  color: azure;
+}
+.city {
+  color: skyblue;
+}
+.app2 {
+  width: 400px;
+  margin-left: 2300px;
+}
+.second-container {
+  width: 20%;
+  margin-top: -222px;
+  margin-left: 70%;
+}
+.fixed-container {
+  margin-left: 37%;
+  box-shadow: 5px 5px 10px 5px gray;
+  background-image: url("./components//assents/pictures/mini-image.jfif");
+  background-size: cover;
+  margin-top: -900px;
+  border-radius: 20px;
+  height: 200px;
+}
+.temp,
+.feels-like {
+  font-size: 30px;
+  color: black;
 }
