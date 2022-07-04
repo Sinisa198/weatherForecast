@@ -6,8 +6,8 @@ import "../index.css";
 import sunny from "./assents/pictures/sunny.png";
 import clouds from "./assents/pictures/cloud.png";
 import rainy from "./assents/pictures/rainy.png";
+import { ChangeEventHandler } from "react";
 import snow from "./assents/pictures/snow.png";
-import WfForMyLocation from "./WfForMyLocation";
 interface Data {
   name: string;
   wind: {
@@ -42,7 +42,36 @@ const toCelsus = (data: any) => {
 const feelsLike = (data: any) => {
   return (((data.main.feels_like - 32) * 5) / 9).toFixed();
 };
+const setDark = () => {
+  localStorage.setItem("theme", "dark");
+  document.documentElement.setAttribute("data-theme", "dark");
+};
 
+const setLight = () => {
+  localStorage.setItem("theme", "light");
+  document.documentElement.setAttribute("data-theme", "light");
+};
+
+const storedTheme = localStorage.getItem("theme");
+
+const prefersDark =
+  window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+const defaultDark =
+  storedTheme === "dark" || (storedTheme === null && prefersDark);
+
+if (defaultDark) {
+  setDark();
+}
+
+const toggleTheme: ChangeEventHandler<HTMLInputElement> = (e) => {
+  if (e.target.checked) {
+    setDark();
+  } else {
+    setLight();
+  }
+};
 const WeatherFraces = () => {
   const [data, setData] = useState<Data>();
   const [loading, setLoading] = useState(true);

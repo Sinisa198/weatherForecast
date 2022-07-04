@@ -36,11 +36,11 @@ h1 {
 
 .app input {
   padding: 0.7rem 1.5rem;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.8);
   background: rgba(255, 255, 255, 0.1);
-  color: black;
+  color: white;
 }
 
 ::placeholder {
@@ -108,12 +108,13 @@ h1 {
 .wind {
   font-size: 25px;
   font-weight: bold;
+  color: white;
 }
 .nameCity {
   margin-left: 200px;
   padding-top: 90px;
   font-size: 45px;
-  color: black;
+  color: white;
   padding-right: 200px;
 }
 .icon-sunny {
@@ -142,7 +143,7 @@ h1 {
 .second-container {
   width: 20%;
   margin-left: 76%;
-  margin-top: -1100px;
+  margin-top: -1300px;
   text-align: center;
 }
 .fixed-container {
@@ -154,9 +155,12 @@ h1 {
   height: 350px;
   padding-top: 55px;
 }
+.temp {
+  color: white;
+}
 .temp2 {
   font-size: 30px;
-  color: black;
+  color: white;
   padding-top: 30px;
 }
 .image-container {
@@ -168,6 +172,7 @@ h1 {
   text-align: center;
 }
 .title {
+  color: white;
   text-align: center;
 }
 .span-title {

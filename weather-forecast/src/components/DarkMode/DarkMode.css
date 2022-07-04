@@ -1,38 +1,27 @@
-:root {
-  --font-color: #333;
-  --link-color: cornflowerblue;
-}
-
 [data-theme="dark"] {
   --font-color: #eee;
-  background-image: url("./assents/pictures/mini-image.jfif");
+  background-image: url("../assents//pictures/mini-image.jfif");
   --link-color: peachpuff;
 }
 
 body {
   color: var(--font-color);
-  background-image: url("./assents/pictures/night.jpg");
+  background-image: url("../assents/pictures/night.jpg");
   background-size: cover;
-}
-
-a {
-  color: var(--link-color);
+  color: white;
 }
 
 .toggle-theme-wrapper {
+  margin-top: -450px;
+  margin-left: 2500px;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 4px;
 }
 
-.toggle-theme-wrapper span {
-  font-size: 28px;
-}
-
 .toggle-theme {
   position: relative;
-  display: inline-block;
   height: 34px;
   width: 60px;
 }

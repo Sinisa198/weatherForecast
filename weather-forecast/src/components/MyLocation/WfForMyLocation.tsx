@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import sunny from "./assents/pictures/sunny.png";
-import cloud from "./assents/pictures/cloud.png";
+import { useEffect, useState } from "react";
+import sunny from "../assents/pictures/sunny.png";
 export const WeatherUrlPrefix =
   "https://api.openweathermap.org/data/2.5/forecast";
 
@@ -42,7 +41,6 @@ const WfForMyLocation = () => {
           <div className="weather-main">
             <img className="image-container" src={sunny} />
             <h4 className="temp2"> {weather.temp.toFixed()} °C</h4>
-            <h5 className="feels-like"></h5>
           </div>
         )}
       </div>
