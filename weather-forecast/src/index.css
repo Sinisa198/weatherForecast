@@ -141,7 +141,7 @@ h1 {
 }
 .second-container {
   width: 20%;
-  margin-left: 70%;
+  margin-left: 76%;
   margin-top: -1100px;
   text-align: center;
 }
@@ -162,8 +162,6 @@ h1 {
 .image-container {
   padding-top: 40px;
   width: 100px;
-}
-.image-icon {
 }
 .city-input {
   border-radius: 20px;

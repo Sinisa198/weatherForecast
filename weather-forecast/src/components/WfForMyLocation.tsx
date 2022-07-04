@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import sunny from "./assents/pictures/sunny.png";
-import DarkMode from "./DarMode";
+import cloud from "./assents/pictures/cloud.png";
 export const WeatherUrlPrefix =
   "https://api.openweathermap.org/data/2.5/forecast";
 
@@ -46,7 +46,6 @@ const WfForMyLocation = () => {
           </div>
         )}
       </div>
-      <DarkMode />
     </div>
   );
 };
