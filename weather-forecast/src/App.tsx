@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, ChangeEventHandler } from "react";
 import WeatherFraces from "./components/WeatherFraces";
 import WfForMyLocation from "./components/MyLocation/WfForMyLocation";
 import DarkMode from "./components/DarkMode/DarkMode";
@@ -7,7 +7,6 @@ import axios from "axios";
 import sunny from "./components/assets/pictures/sunny.png";
 import clouds from "./components/assets/pictures/cloud.png";
 import rainy from "./components/assets/pictures/rainy.png";
-import { ChangeEventHandler } from "react";
 import snow from "./components/assets/pictures/snow.png";
 interface Data {
   name: string;
@@ -26,8 +25,8 @@ interface Data {
 const App = () => {
   const [data, setData] = useState<Data>();
   const [loading, setLoading] = useState(true);
-
   const [location, setLocation] = useState("");
+
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${process.env.REACT_APP_KEY}`;
   const searchLocation = (event: any) => {
     if (event.key === "Enter") {
@@ -68,17 +67,7 @@ const App = () => {
 
   const storedTheme = localStorage.getItem("theme");
 
-  const prefersDark =
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-  const defaultDark =
-    storedTheme === "dark" || (storedTheme === null && prefersDark);
-
-  if (defaultDark) {
-    setDark();
-  }
-
+  const defaultDark = storedTheme === "dark" || storedTheme === null;
   const toggleTheme: ChangeEventHandler<HTMLInputElement> = (e) => {
     if (e.target.checked) {
       setDark();
@@ -94,6 +83,7 @@ const App = () => {
         searchLocation={searchLocation}
         getWeatherIcon={getWeatherIcon}
         toCelsus={toCelsus}
+        location={location}
       />
       <WfForMyLocation />
       <DarkMode onToggle={toggleTheme} darkDefault={defaultDark} />

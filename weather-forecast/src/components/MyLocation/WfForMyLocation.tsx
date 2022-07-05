@@ -14,7 +14,7 @@ const WfForMyLocation = () => {
 
   useEffect(() => {
     const fetchWeather = async () => {
-      const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=dbfaecb66ad29b340d7b49ba320dce31&units=metric`;
+      const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${process.env.REACT_APP_KEY}&units=metric`;
       try {
         const result = await fetch(url);
         const data = await result.json();

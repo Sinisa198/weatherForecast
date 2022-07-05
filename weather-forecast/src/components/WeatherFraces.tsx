@@ -1,29 +1,31 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import Spinner from "react-bootstrap/Spinner";
 import "../index.css";
 import people from "./assets/pictures/people.png";
 import humidity from "./assets/pictures/humidity.png";
 import storm from "./assets/pictures/storm.png";
-
+import { DebounceInput } from "react-debounce-input";
 const WeatherFraces = ({
   data,
   setLocation,
   searchLocation,
   toCelsus,
   getWeatherIcon,
+  location,
 }: any) => {
   return (
     <div className="app">
       <h1 className="title">
         Weather <span className="span-title">Forecast</span>
       </h1>
-
       <div className="search">
-        <input
-          onChange={(event) => setLocation(event.target.value)}
+        <DebounceInput
+          value={location}
+          minLength={3}
+          debounceTimeout={3000}
           onKeyPress={searchLocation}
           placeholder="Enter Location"
           type="text"
+          onChange={(event) => setLocation(event.target.value)}
         />
       </div>
 

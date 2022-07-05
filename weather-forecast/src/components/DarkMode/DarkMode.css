@@ -10,7 +10,7 @@ body {
   background-size: cover;
   color: white;
 }
-
+/* 
 .toggle-theme-wrapper {
   margin-top: -450px;
   margin-left: 2500px;
@@ -18,15 +18,17 @@ body {
   flex-direction: row;
   align-items: center;
   gap: 4px;
-}
+} */
 
 .toggle-theme {
   position: relative;
   height: 34px;
-  width: 60px;
 }
-@media screen and(max-width:768px) {
-  .span {
-    margin-top: 2000px;
+@media screen and (max-width: 768px) {
+  .toggle-theme-wrapper {
+    margin-top: -1600px;
+  }
+  .toggle-theme {
+    width: 60px;
   }
 }
