@@ -10,17 +10,17 @@ body {
   background-size: cover;
   color: white;
 }
-/* 
+
 .toggle-theme-wrapper {
   margin-top: -450px;
-  margin-left: 2500px;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 4px;
-} */
+}
 
 .toggle-theme {
+  width: 70px;
   position: relative;
   height: 34px;
 }
