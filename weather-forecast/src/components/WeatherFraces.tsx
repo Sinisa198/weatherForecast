@@ -3,14 +3,14 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Spinner from "react-bootstrap/Spinner";
 import "../index.css";
-import sunny from "./assents/pictures/sunny.png";
-import clouds from "./assents/pictures/cloud.png";
-import rainy from "./assents/pictures/rainy.png";
+import sunny from "./assets/pictures/sunny.png";
+import clouds from "./assets/pictures/cloud.png";
+import rainy from "./assets/pictures/rainy.png";
 import { ChangeEventHandler } from "react";
-import snow from "./assents/pictures/snow.png";
-import humidity from "./assents/pictures/humidity.png";
-import storm from "./assents/pictures/storm.png";
-import people from "./assents/pictures/ancestors.png";
+import snow from "./assets/pictures/snow.png";
+import people from "./assets/pictures/people.png";
+import humidity from "./assets/pictures/humidity.png";
+import storm from "./assets/pictures/storm.png";
 interface Data {
   name: string;
   wind: {
@@ -37,45 +37,12 @@ const getWeatherIcon = (weather: any) => {
       return <img className="icon-sunny" src={snow} />;
   }
 };
-
-const toCelsus = (data: any) => {
+const toCelsus = (tempetature: any) => {
   {
-    return (((data.main.temp - 32) * 5) / 9).toFixed();
+    return (((tempetature - 32) * 5) / 9).toFixed();
   }
 };
-const feelsLike = (data: any) => {
-  return (((data.main.feels_like - 32) * 5) / 9).toFixed();
-};
-const setDark = () => {
-  localStorage.setItem("theme", "dark");
-  document.documentElement.setAttribute("data-theme", "dark");
-};
 
-const setLight = () => {
-  localStorage.setItem("theme", "light");
-  document.documentElement.setAttribute("data-theme", "light");
-};
-
-const storedTheme = localStorage.getItem("theme");
-
-const prefersDark =
-  window.matchMedia &&
-  window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-const defaultDark =
-  storedTheme === "dark" || (storedTheme === null && prefersDark);
-
-if (defaultDark) {
-  setDark();
-}
-
-const toggleTheme: ChangeEventHandler<HTMLInputElement> = (e) => {
-  if (e.target.checked) {
-    setDark();
-  } else {
-    setLight();
-  }
-};
 const WeatherFraces = () => {
   const [data, setData] = useState<Data>();
   const [loading, setLoading] = useState(true);
@@ -97,6 +64,7 @@ const WeatherFraces = () => {
       <h1 className="title">
         Weather <span className="span-title">Forecast</span>
       </h1>
+
       <div className="search">
         <input
           value={location}
@@ -118,14 +86,16 @@ const WeatherFraces = () => {
               {getWeatherIcon(data.weather[0].main)}
             </div>
             <div className="temp">
-              {data.main ? <h1>{toCelsus(data)}°C</h1> : null}
+              {data.main ? <h1>{toCelsus(data.main.temp)}°C</h1> : null}
             </div>
           </div>
           {data.name !== undefined && (
             <div className="bottom">
               <div className="feels">
                 <p>Feels Like</p>
-                {data.main ? <p className="bold">{feelsLike(data)}°C</p> : null}
+                {data.main ? (
+                  <p className="bold">{toCelsus(data.main.feels_like)}°C</p>
+                ) : null}
                 <img src={people} className="people-icon" />
               </div>
               <div className="humidity">

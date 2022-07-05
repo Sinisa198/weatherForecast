@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import sunny from "../assents/pictures/sunny.png";
+import sunny from "../assets/pictures/sunny.png";
 export const WeatherUrlPrefix =
   "https://api.openweathermap.org/data/2.5/forecast";
 

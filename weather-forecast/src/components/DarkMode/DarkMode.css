@@ -1,12 +1,12 @@
 [data-theme="dark"] {
   --font-color: #eee;
-  background-image: url("../assents//pictures/night.jpg");
+  background-image: url("../assets/pictures/night.jpg");
   --link-color: peachpuff;
 }
 
 body {
   color: var(--font-color);
-  background-image: url("../assents/pictures/night.jpg");
+  background-image: url("../assets/pictures/night.jpg");
   background-size: cover;
   color: white;
 }

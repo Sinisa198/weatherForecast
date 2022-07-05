@@ -19,7 +19,7 @@ h1 {
 
 .app:before {
   content: "";
-  background: url("./components/assents/pictures/bg.jpg") no-repeat center
+  background: url("./components/assets/pictures/bg.jpg") no-repeat center
     center/cover;
   position: absolute;
   width: 100%;
