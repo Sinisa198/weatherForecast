@@ -1,6 +1,6 @@
 import { ChangeEventHandler } from "react";
 import "./DarkMode.css";
-const DarkMode = ({ onToggle, dark }: any) => {
+const DarkMode = ({ onToggle, darkDefault }: any) => {
   return (
     <div className="toggle-theme-wrapper">
       <span>☀️</span>
@@ -9,7 +9,7 @@ const DarkMode = ({ onToggle, dark }: any) => {
           type="checkbox"
           id="checkbox"
           onChange={onToggle}
-          defaultChecked={dark}
+          defaultChecked={darkDefault}
         />
         <div className="slider round"></div>
       </label>

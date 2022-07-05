@@ -1,64 +1,17 @@
-import { useState } from "react";
-import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Spinner from "react-bootstrap/Spinner";
 import "../index.css";
-import sunny from "./assets/pictures/sunny.png";
-import clouds from "./assets/pictures/cloud.png";
-import rainy from "./assets/pictures/rainy.png";
-import { ChangeEventHandler } from "react";
-import snow from "./assets/pictures/snow.png";
 import people from "./assets/pictures/people.png";
 import humidity from "./assets/pictures/humidity.png";
 import storm from "./assets/pictures/storm.png";
-interface Data {
-  name: string;
-  wind: {
-    speed: number;
-  };
-  main: {
-    temp: number;
-    feels_like: number;
-    humidity: number;
-  };
-  weather: {
-    main: string;
-  }[];
-}
-const getWeatherIcon = (weather: any) => {
-  switch (weather) {
-    case "Clear":
-      return <img className="icon-sunny" src={sunny} />;
-    case "Clouds":
-      return <img className="icon-sunny" src={clouds} />;
-    case "Rain":
-      return <img className="icon-sunny" src={rainy} />;
-    case "Snow":
-      return <img className="icon-sunny" src={snow} />;
-  }
-};
-const toCelsus = (tempetature: any) => {
-  {
-    return (((tempetature - 32) * 5) / 9).toFixed();
-  }
-};
 
-const WeatherFraces = () => {
-  const [data, setData] = useState<Data>();
-  const [loading, setLoading] = useState(true);
-
-  const [location, setLocation] = useState("");
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${process.env.REACT_APP_KEY}`;
-  const searchLocation = (event: any) => {
-    if (event.key === "Enter") {
-      axios.get(url).then((response) => {
-        setData(response.data);
-        setLoading(false);
-      });
-      setLocation("");
-    }
-  };
-
+const WeatherFraces = ({
+  data,
+  setLocation,
+  searchLocation,
+  toCelsus,
+  getWeatherIcon,
+}: any) => {
   return (
     <div className="app">
       <h1 className="title">
@@ -67,13 +20,11 @@ const WeatherFraces = () => {
 
       <div className="search">
         <input
-          value={location}
           onChange={(event) => setLocation(event.target.value)}
           onKeyPress={searchLocation}
           placeholder="Enter Location"
           type="text"
         />
-        {loading && <Spinner animation="border" variant="success" />}
       </div>
 
       {data && (
