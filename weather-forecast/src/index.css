@@ -158,6 +158,11 @@ h1 {
 .temp {
   color: white;
 }
+.logo {
+  width: 200px;
+  margin-left: -2700px;
+  margin-top: -270px;
+}
 .temp2 {
   font-size: 30px;
   color: white;
@@ -180,4 +185,23 @@ h1 {
 }
 .celsus {
   margin-left: 200px;
+}
+.login {
+  width: 500px;
+  height: 50px;
+  margin-top: 20px;
+  color: black;
+}
+.humidity-icon,
+.storm-icon,
+.people-icon {
+  width: 70px;
+}
+@media screen and (max-width: 768px) {
+  .second-container {
+    margin-top: 110%;
+    width: 500px;
+    margin-left: 30px;
+    padding-bottom: 40px;
+  }
 }

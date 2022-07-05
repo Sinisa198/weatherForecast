@@ -8,6 +8,9 @@ import clouds from "./assents/pictures/cloud.png";
 import rainy from "./assents/pictures/rainy.png";
 import { ChangeEventHandler } from "react";
 import snow from "./assents/pictures/snow.png";
+import humidity from "./assents/pictures/humidity.png";
+import storm from "./assents/pictures/storm.png";
+import people from "./assents/pictures/ancestors.png";
 interface Data {
   name: string;
   wind: {
@@ -34,6 +37,7 @@ const getWeatherIcon = (weather: any) => {
       return <img className="icon-sunny" src={snow} />;
   }
 };
+
 const toCelsus = (data: any) => {
   {
     return (((data.main.temp - 32) * 5) / 9).toFixed();
@@ -93,7 +97,6 @@ const WeatherFraces = () => {
       <h1 className="title">
         Weather <span className="span-title">Forecast</span>
       </h1>
-
       <div className="search">
         <input
           value={location}
@@ -123,18 +126,21 @@ const WeatherFraces = () => {
               <div className="feels">
                 <p>Feels Like</p>
                 {data.main ? <p className="bold">{feelsLike(data)}°C</p> : null}
+                <img src={people} className="people-icon" />
               </div>
               <div className="humidity">
                 <p>Humidity</p>
                 {data.main ? (
                   <p className="bold">{data.main.humidity}%</p>
                 ) : null}
+                <img src={humidity} className="humidity-icon" />
               </div>
               <div className="wind">
                 <p>Wind Speed</p>
                 {data.wind ? (
                   <p className="bold">{data.wind.speed.toFixed()} MPH</p>
                 ) : null}
+                <img src={storm} className="storm-icon" />
               </div>
             </div>
           )}

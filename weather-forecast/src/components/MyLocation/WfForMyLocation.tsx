@@ -3,12 +3,12 @@ import sunny from "../assents/pictures/sunny.png";
 export const WeatherUrlPrefix =
   "https://api.openweathermap.org/data/2.5/forecast";
 
-interface Fraces {
+interface Location {
   temp: number;
   feels_like: number;
 }
 const WfForMyLocation = () => {
-  const [weather, setWeather] = useState<Fraces>();
+  const [weather, setWeather] = useState<Location>();
   const [input, setInput] = useState("Novi Sad");
   const [city, setCity] = useState("Novi Sad");
 

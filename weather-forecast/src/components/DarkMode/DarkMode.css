@@ -1,6 +1,6 @@
 [data-theme="dark"] {
   --font-color: #eee;
-  background-image: url("../assents//pictures/mini-image.jfif");
+  background-image: url("../assents//pictures/night.jpg");
   --link-color: peachpuff;
 }
 
@@ -24,4 +24,9 @@ body {
   position: relative;
   height: 34px;
   width: 60px;
+}
+@media screen and(max-width:768px) {
+  .span {
+    margin-top: 2000px;
+  }
 }
