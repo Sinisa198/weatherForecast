@@ -6,6 +6,7 @@ import humidity from "./assets/pictures/humidity.png";
 import storm from "./assets/pictures/storm.png";
 import { DebounceInput } from "react-debounce-input";
 import { Spinner } from "react-bootstrap";
+import News from "./news/News";
 const WeatherFraces = ({
   data,
   setLocation,
@@ -17,9 +18,9 @@ const WeatherFraces = ({
 }: any) => {
   return (
     <div className="app">
-      <button className="button-49" role="button">
-        News
-      </button>
+      <a href="/news">
+        <button className="weather-button">News</button>
+      </a>
       <h1 className="title">
         Weather <span className="span-title">Forecast</span>
       </h1>

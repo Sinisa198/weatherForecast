@@ -7,24 +7,25 @@ import doctor from "../assets/pictures/doctor.jpg";
 import fire from "../assets/pictures/fire.jpg";
 const News = () => {
   return (
-    <div>
+    <div className="news-main">
       <header className="news-header">
-        <h1 className="news-title">Foreca News</h1>
+        <h1 className="news-title">Weather Forecast</h1>
         <p className="news-paragrap">
           The latest news and ideas of how to use weather information in today's
           digital services.
         </p>
       </header>
+      <button className="news-button">Back</button>
       <div className="blog-post">
         <div className="blog-post__img">
           <img src={human} alt="" />
         </div>
         <div className="blog-post__info">
           <div className="blog-post__date">
-            <span>Sunday</span>
+            <span>Monday</span>
             <span>July 4 2022</span>
           </div>
-          <h1 className="blog-post__title">War Ukraine</h1>
+          <h1 className="blog-post__title">War in Ukraine</h1>
           <p className="blog-post__text">
             The university professor has been teaching online since the pandemic
             but for the past few months, he has been educating his students from
@@ -54,8 +55,8 @@ const News = () => {
         </div>
         <div className="blog-post__info">
           <div className="blog-post__date">
-            <span>Sunday</span>
-            <span>October 29 20219</span>
+            <span>Wednesday</span>
+            <span>June 29 2022</span>
           </div>
           <h1 className="blog-post__title">
             Novi Sad achieved the best tourist traffic in the last two decades
@@ -101,16 +102,26 @@ const News = () => {
         </div>
         <div className="blog-post__info">
           <div className="blog-post__date">
-            <span>Sunday</span>
-            <span>October 29 20219</span>
+            <span>Thursday</span>
+            <span>July 7 2022</span>
           </div>
           <h1 className="blog-post__title">CDC report</h1>
           <p className="blog-post__text">
-            With record-breaking heat and an increasing number of days exceeding
-            triple digit temperatures, a CDC report reveals that Arizona
-            residents seeking refuge from extreme heat may face barriers to
-            indoor, air-conditioned centers designed to shield them from
-            dangerous heat.
+            Arizona residents seeking refuge from extreme heat may face barriers
+            to accessing cooling centers designed to shield vulnerable
+            populations from dangerous temperatures, a new report from the U.S.
+            Centers for Disease Control and Prevention shows. Heat exposure and
+            heat-related illness are on the rise and the age group most at risk
+            for hospitalization—those 65 and older—may be unaware that cooling
+            centers exist, or experience challenges accessing them because of a
+            lack of transportation. “Arizona is a national leader in both
+            monitoring and responding to health impacts of heat, and is
+            absolutely at the forefront of heat exposure in the United States,”
+            said Evan Mallen, the report’s lead author, who is a fellow in the
+            CDC’s Division of Environmental Health Science and Practice. The
+            state, he said, “was a natural place to look first when it comes to
+            both analyzing the challenges that Arizona has faced, but also the
+            great work that Arizona is doing.”
           </p>
           <a
             href="https://azcir.org/news/2022/06/17/cooling-center-access-limited-vulnerable-residents-extreme-heat/"
@@ -127,7 +138,7 @@ const News = () => {
         <div className="blog-post__info">
           <div className="blog-post__date">
             <span>Sunday</span>
-            <span>October 29 20219</span>
+            <span>June 26 20219</span>
           </div>
           <h1 className="blog-post__title">
             Japanese tourist boat sinks with at least 10 dead, authorities
@@ -160,8 +171,8 @@ const News = () => {
         </div>
         <div className="blog-post__info">
           <div className="blog-post__date">
-            <span>Sunday</span>
-            <span>October 29 20219</span>
+            <span>Friday</span>
+            <span>July 9 2022</span>
           </div>
           <h1 className="blog-post__title">
             Two German tourists convicted over fatal Lake Garda boat crash
@@ -194,8 +205,8 @@ const News = () => {
         </div>
         <div className="blog-post__info">
           <div className="blog-post__date">
-            <span>Sunday</span>
-            <span>October 29 20219</span>
+            <span>Tuesday</span>
+            <span>July 5 2022</span>
           </div>
           <h1 className="blog-post__title">
             Cable car crashes in northern Czech Republic, killing one person

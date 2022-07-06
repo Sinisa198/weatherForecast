@@ -4,12 +4,14 @@ import News from "./components/news/News";
 import { useState, ChangeEventHandler } from "react";
 import WeatherFraces from "./components/WeatherFraces";
 import WfForMyLocation from "./components/MyLocation/WfForMyLocation";
+import NavBar from "./components/MyLocation/navbar/NavBar";
 import DarkMode from "./components/DarkMode/DarkMode";
 import axios from "axios";
 import sunny from "./components/assets/pictures/sunny.png";
 import clouds from "./components/assets/pictures/cloud.png";
 import rainy from "./components/assets/pictures/rainy.png";
 import snow from "./components/assets/pictures/snow.png";
+import Map from "./components/Map";
 interface Data {
   name: string;
   wind: {
@@ -79,6 +81,7 @@ const App = () => {
   };
   return (
     <div className="App">
+      {/* <Map /> */}
       <News />
       {/* <WeatherFraces
         data={data}
