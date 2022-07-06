@@ -1,4 +1,6 @@
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import News from "./components/news/News";
 import { useState, ChangeEventHandler } from "react";
 import WeatherFraces from "./components/WeatherFraces";
 import WfForMyLocation from "./components/MyLocation/WfForMyLocation";
@@ -77,16 +79,18 @@ const App = () => {
   };
   return (
     <div className="App">
-      <WeatherFraces
+      <News />
+      {/* <WeatherFraces
         data={data}
         setLocation={setLocation}
         searchLocation={searchLocation}
         getWeatherIcon={getWeatherIcon}
         toCelsus={toCelsus}
         location={location}
+        loadin={loading}
       />
       <WfForMyLocation />
-      <DarkMode onToggle={toggleTheme} darkDefault={defaultDark} />
+      <DarkMode onToggle={toggleTheme} darkDefault={defaultDark} /> */}
     </div>
   );
 };

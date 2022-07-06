@@ -3,7 +3,7 @@ import "./DarkMode.css";
 const DarkMode = ({ onToggle, darkDefault }: any) => {
   return (
     <div className="toggle-theme-wrapper">
-      <span>☀️</span>
+      <span className="sun-icon">☀️</span>
       <label className="toggle-theme" htmlFor="checkbox">
         <input
           type="checkbox"
@@ -13,7 +13,7 @@ const DarkMode = ({ onToggle, darkDefault }: any) => {
         />
         <div className="slider round"></div>
       </label>
-      <span>🌒</span>
+      <span className="moon-icon">🌒</span>
     </div>
   );
 };

@@ -22,6 +22,7 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.7.4",
+    "typescript-playground-link-shortener": "^1.0.0",
     "use-local-storage": "^2.3.6",
     "web-vitals": "^2.1.4"
   },
@@ -52,6 +53,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
-    "eslint": "^8.18.0"
+    "eslint": "^8.18.0",
+    "react-router-dom": "^6.3.0"
   }
 }

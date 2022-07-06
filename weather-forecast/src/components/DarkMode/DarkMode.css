@@ -23,6 +23,7 @@ body {
   width: 70px;
   position: relative;
   height: 34px;
+  margin-top: 40px;
 }
 @media screen and (max-width: 768px) {
   .toggle-theme-wrapper {
@@ -31,4 +32,11 @@ body {
   .toggle-theme {
     width: 60px;
   }
+}
+.sun-icon {
+  margin-left: 40px;
+  margin-top: 40px;
+}
+.moon-icon {
+  margin-top: 37px;
 }

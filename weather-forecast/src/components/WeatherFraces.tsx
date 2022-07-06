@@ -1,9 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../index.css";
+import { Link, useNavigate } from "react-router-dom";
 import people from "./assets/pictures/people.png";
 import humidity from "./assets/pictures/humidity.png";
 import storm from "./assets/pictures/storm.png";
 import { DebounceInput } from "react-debounce-input";
+import { Spinner } from "react-bootstrap";
 const WeatherFraces = ({
   data,
   setLocation,
@@ -11,9 +13,13 @@ const WeatherFraces = ({
   toCelsus,
   getWeatherIcon,
   location,
+  loading,
 }: any) => {
   return (
     <div className="app">
+      <button className="button-49" role="button">
+        News
+      </button>
       <h1 className="title">
         Weather <span className="span-title">Forecast</span>
       </h1>
@@ -27,10 +33,12 @@ const WeatherFraces = ({
           type="text"
           onChange={(event) => setLocation(event.target.value)}
         />
+        <Spinner animation="border" variant="info" />
       </div>
 
       {data && (
         <div className="container">
+          {loading && <Spinner animation="border" variant="info" />}
           <div className="top">
             <div className="location">
               <p className="nameCity">{data.name}</p>
@@ -42,6 +50,7 @@ const WeatherFraces = ({
               {data.main ? <h1>{toCelsus(data.main.temp)}°C</h1> : null}
             </div>
           </div>
+
           {data.name !== undefined && (
             <div className="bottom">
               <div className="feels">
