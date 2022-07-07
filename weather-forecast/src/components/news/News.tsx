@@ -92,7 +92,7 @@ const News = () => {
         <div className="blog-post__info">
           <div className="blog-post__date">
             <span>Sunday</span>
-            <span>June 26 2022</span>
+            <span>June 2 2022</span>
           </div>
           <h1 className="blog-post__title">Japanese tourist</h1>
           <p className="blog-post__text">

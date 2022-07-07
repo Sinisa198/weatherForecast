@@ -197,6 +197,9 @@ button:hover::after {
   .news-header {
     height: 500px;
   }
+  .blog-post {
+    padding: 30px;
+  }
 }
 .news-paragrap {
   margin-top: -10px;
@@ -268,5 +271,11 @@ button:hover::after {
   .blog-post__date {
     font-size: 1rem;
     margin-right: 500px;
+  }
+  .blog-post {
+    margin-top: 160px;
+  }
+  .news-header {
+    padding-top: 150px;
   }
 }

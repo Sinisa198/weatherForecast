@@ -48,7 +48,6 @@ const WeatherFraces = ({
               {data.main ? <h1>{toCelsus(data.main.temp)}°C</h1> : null}
             </div>
           </div>
-
           {data.name !== undefined && (
             <div className="bottom">
               <div className="feels">

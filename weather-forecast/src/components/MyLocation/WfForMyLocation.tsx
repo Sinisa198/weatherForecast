@@ -41,7 +41,7 @@ const WfForMyLocation = () => {
         </form>
         {weather && (
           <div className="weather-main">
-            <img className="image-container" src={sunny} />
+            <img className="image-container" src={cloud} />
             <h4 className="temp2"> {weather.temp.toFixed()} °C</h4>
           </div>
         )}
