@@ -12,10 +12,10 @@ import WeatherFraces from "./components/WeatherFraces";
 import WfForMyLocation from "./components/myLocation/WfForMyLocation";
 import DarkMode from "./components/darkMode/DarkMode";
 import axios from "axios";
-import sunny from "./components/assets/pictures/sunny.png";
-import clouds from "./components/assets/pictures/cloud.png";
-import rainy from "./components/assets/pictures/rainy.png";
-import snow from "./components/assets/pictures/snow.png";
+import sunny from "./assets/sunny.png";
+import clouds from "./assets/cloud.png";
+import rainy from "./assets/rainy.png";
+import snow from "./assets/snow.png";
 import Test from "./test";
 interface Data {
   name: string;

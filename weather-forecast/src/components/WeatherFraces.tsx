@@ -1,13 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../index.css";
 import { Link, useNavigate } from "react-router-dom";
-import people from "./assets/pictures/people.png";
-import humidity from "./assets/pictures/humidity.png";
-import storm from "./assets/pictures/storm.png";
+import people from "../assets/people.png";
+import humidity from "../assets/humidity.png";
+import storm from "../assets/storm.png";
 import { DebounceInput } from "react-debounce-input";
 import { Spinner } from "react-bootstrap";
-import News from "./news/News";
-import DarkMode from "./darkMode/DarkMode";
 const WeatherFraces = ({
   data,
   setLocation,

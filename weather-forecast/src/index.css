@@ -20,7 +20,7 @@ h1 {
 }
 .app:before {
   content: "";
-  background: url("./components/assets/pictures/bg.jpg");
+  background: url("../src/assets/bg.jpg");
   background-size: cover;
   position: absolute;
   width: 100%;

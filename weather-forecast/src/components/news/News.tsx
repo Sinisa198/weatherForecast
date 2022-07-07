@@ -1,10 +1,10 @@
 import "./News.css";
-import human from "../assets/pictures/human.jpg";
-import novisad from "../assets/pictures/novisad.jpg";
-import cdc from "../assets/pictures/cdc.webp";
-import helicto from "../assets/pictures/helicto.jpg";
-import doctor from "../assets/pictures/doctor.jpg";
-import fire from "../assets/pictures/fire.jpg";
+import human from "../../assets/human.jpg";
+import novisad from "../../assets/novisad.jpg";
+import cdc from "../../assets/cdc.webp";
+import helicto from "../../assets/helicto.jpg";
+import doctor from "../../assets/doctor.jpg";
+import fire from "../../assets/fire.jpg";
 const News = () => {
   return (
     <div className="news-main">
