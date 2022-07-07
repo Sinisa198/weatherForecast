@@ -7,6 +7,7 @@ import storm from "./assets/pictures/storm.png";
 import { DebounceInput } from "react-debounce-input";
 import { Spinner } from "react-bootstrap";
 import News from "./news/News";
+import DarkMode from "./darkMode/DarkMode";
 const WeatherFraces = ({
   data,
   setLocation,
@@ -18,9 +19,9 @@ const WeatherFraces = ({
 }: any) => {
   return (
     <div className="app">
-      <a href="/news">
-        <button className="weather-button">News</button>
-      </a>
+      {/* <a href="/news">
+        <button className="home-button">News</button>
+      </a> */}
       <h1 className="title">
         Weather <span className="span-title">Forecast</span>
       </h1>
@@ -36,10 +37,8 @@ const WeatherFraces = ({
         />
         <Spinner animation="border" variant="info" />
       </div>
-
       {data && (
         <div className="container">
-          {loading && <Spinner animation="border" variant="info" />}
           <div className="top">
             <div className="location">
               <p className="nameCity">{data.name}</p>

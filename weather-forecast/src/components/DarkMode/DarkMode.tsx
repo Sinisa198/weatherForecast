@@ -1,4 +1,3 @@
-import { ChangeEventHandler } from "react";
 import "./DarkMode.css";
 const DarkMode = ({ onToggle, darkDefault }: any) => {
   return (

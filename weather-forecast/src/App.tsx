@@ -1,17 +1,22 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  BrowserRouter,
+} from "react-router-dom";
 import News from "./components/news/News";
 import { useState, ChangeEventHandler } from "react";
 import WeatherFraces from "./components/WeatherFraces";
-import WfForMyLocation from "./components/MyLocation/WfForMyLocation";
-import NavBar from "./components/MyLocation/navbar/NavBar";
-import DarkMode from "./components/DarkMode/DarkMode";
+import WfForMyLocation from "./components/myLocation/WfForMyLocation";
+import DarkMode from "./components/darkMode/DarkMode";
 import axios from "axios";
 import sunny from "./components/assets/pictures/sunny.png";
 import clouds from "./components/assets/pictures/cloud.png";
 import rainy from "./components/assets/pictures/rainy.png";
 import snow from "./components/assets/pictures/snow.png";
-import Map from "./components/Map";
+import Test from "./test";
 interface Data {
   name: string;
   wind: {
@@ -81,9 +86,7 @@ const App = () => {
   };
   return (
     <div className="App">
-      {/* <Map /> */}
-      <News />
-      {/* <WeatherFraces
+      <WeatherFraces
         data={data}
         setLocation={setLocation}
         searchLocation={searchLocation}
@@ -93,7 +96,9 @@ const App = () => {
         loadin={loading}
       />
       <WfForMyLocation />
-      <DarkMode onToggle={toggleTheme} darkDefault={defaultDark} /> */}
+
+      <DarkMode onToggle={toggleTheme} darkDefault={defaultDark} />
+      <News />
     </div>
   );
 };

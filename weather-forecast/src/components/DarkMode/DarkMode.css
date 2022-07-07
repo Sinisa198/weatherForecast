@@ -28,6 +28,7 @@ body {
 @media screen and (max-width: 768px) {
   .toggle-theme-wrapper {
     margin-top: -1600px;
+    margin-left: 110px;
   }
   .toggle-theme {
     width: 60px;
