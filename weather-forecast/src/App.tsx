@@ -7,6 +7,7 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import News from "./components/news/News";
+import "./index.css";
 import { useState, ChangeEventHandler } from "react";
 import WeatherFraces from "./components/WeatherFraces";
 import WfForMyLocation from "./components/myLocation/WfForMyLocation";
@@ -93,7 +94,7 @@ const App = () => {
         getWeatherIcon={getWeatherIcon}
         toCelsus={toCelsus}
         location={location}
-        loadin={loading}
+        loading={loading}
       />
       <WfForMyLocation />
 

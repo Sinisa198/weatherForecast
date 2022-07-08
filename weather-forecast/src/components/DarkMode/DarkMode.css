@@ -27,7 +27,7 @@ body {
 }
 @media screen and (max-width: 768px) {
   .toggle-theme-wrapper {
-    margin-top: -1600px;
+    margin-top: -2600px;
     margin-left: 110px;
   }
   .toggle-theme {
@@ -40,4 +40,9 @@ body {
 }
 .moon-icon {
   margin-top: 37px;
+}
+@media screen and (max-width: 768px) {
+  .toggle-theme-wrapper {
+    padding-bottom: -200px;
+  }
 }

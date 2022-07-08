@@ -192,10 +192,11 @@ h1 {
 }
 @media screen and (max-width: 768px) {
   .second-container {
-    margin-top: 70%;
+    margin-top: 130%;
     width: 500px;
     margin-left: 5px;
     padding-bottom: 40px;
+    height: 1000px;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -413,12 +414,6 @@ button:hover::after {
   margin-left: -2400px;
   font-size: 30px;
 }
-@media screen and(max-width:768px) {
-  .weather-button {
-    align-items: center;
-    text-align: center;
-  }
-}
 @media screen and (max-width: 1268px) {
   .home-button {
     margin-left: 20px;
@@ -434,9 +429,4 @@ button:hover::after {
 }
 .footer-title {
   font-size: 30px;
-}
-@media screen and (max-width: 768px) {
-  .app {
-    height: 1800px;
-  }
 }

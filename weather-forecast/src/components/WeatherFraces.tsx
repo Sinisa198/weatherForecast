@@ -15,11 +15,11 @@ const WeatherFraces = ({
   location,
   loading,
 }: any) => {
+  const state = {
+    ss: "",
+  };
   return (
     <div className="app">
-      {/* <a href="/news">
-        <button className="home-button">News</button>
-      </a> */}
       <h1 className="title">
         Weather <span className="span-title">Forecast</span>
       </h1>
@@ -27,14 +27,14 @@ const WeatherFraces = ({
         <DebounceInput
           value={location}
           minLength={3}
-          debounceTimeout={3000}
           onKeyPress={searchLocation}
           placeholder="Enter Location"
           type="text"
           onChange={(event) => setLocation(event.target.value)}
         />
-        <Spinner animation="border" variant="info" />
+        {loading && <Spinner animation="border" variant="info" />}
       </div>
+
       {data && (
         <div className="container">
           <div className="top">
@@ -48,6 +48,7 @@ const WeatherFraces = ({
               {data.main ? <h1>{toCelsus(data.main.temp)}°C</h1> : null}
             </div>
           </div>
+
           {data.name !== undefined && (
             <div className="bottom">
               <div className="feels">
@@ -78,5 +79,4 @@ const WeatherFraces = ({
     </div>
   );
 };
-
 export default WeatherFraces;
