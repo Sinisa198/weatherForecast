@@ -15,9 +15,6 @@ const WeatherFraces = ({
   location,
   loading,
 }: any) => {
-  const state = {
-    ss: "",
-  };
   return (
     <div className="app">
       <h1 className="title">
