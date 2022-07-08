@@ -204,7 +204,11 @@ h1 {
     width: 110px;
   }
 }
-
+.search-value {
+  font-size: 35px;
+  margin-top: 50px;
+  color: white;
+}
 .button-49,
 .button-49:after {
   margin-left: -2600px;

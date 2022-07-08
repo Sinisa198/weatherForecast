@@ -17,7 +17,6 @@ import sunny from "./assets/sunny.png";
 import clouds from "./assets/cloud.png";
 import rainy from "./assets/rainy.png";
 import snow from "./assets/snow.png";
-import Test from "./test";
 interface Data {
   name: string;
   wind: {
