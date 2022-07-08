@@ -6,7 +6,6 @@ import humidity from "../assets/humidity.png";
 import storm from "../assets/storm.png";
 import { DebounceInput } from "react-debounce-input";
 import { Spinner } from "react-bootstrap";
-import { useState } from "react";
 const WeatherFraces = ({
   data,
   setLocation,
@@ -16,11 +15,6 @@ const WeatherFraces = ({
   location,
   loading,
 }: any) => {
-  const [state, setState] = useState("");
-  const handleChange = (event: any) => {
-    setLocation(event.target.value);
-    setState(event.target.value);
-  };
   return (
     <div className="app">
       <h1 className="title">
@@ -30,17 +24,18 @@ const WeatherFraces = ({
         <DebounceInput
           value={location}
           minLength={3}
-          debounceTimeout={3000}
+          debounceTimeout={1000}
           placeholder="Enter Location"
           type="text"
-          onChange={handleChange}
-          onKeyPress={searchLocation}
+          onChange={(event) => {
+            searchLocation(event.target.value);
+            setLocation(event.target.value);
+          }}
         />
-        <p className="search-value">Search Value: {state}</p>
         {loading && <Spinner animation="border" variant="info" />}
       </div>
 
-      {data && (
+      {data && !loading && (
         <div className="container">
           <div className="top">
             <div className="location">

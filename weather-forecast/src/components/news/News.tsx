@@ -15,9 +15,7 @@ const News = () => {
           digital services.
         </p>
       </header>
-      {/* <a href="/">
-        <button className="news-button">Back</button>
-      </a> */}
+
       <div className="blog-post">
         <div className="blog-post__img">
           <img src={human} alt="" />

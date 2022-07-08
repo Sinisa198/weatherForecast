@@ -413,7 +413,6 @@ button:hover::after {
     transform: translate(0);
   }
 }
-
 .weather-button {
   margin-left: -2400px;
   font-size: 30px;

@@ -1,22 +1,16 @@
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  BrowserRouter,
-} from "react-router-dom";
 import News from "./components/news/News";
 import "./index.css";
 import { useState, ChangeEventHandler } from "react";
 import WeatherFraces from "./components/WeatherFraces";
-import WfForMyLocation from "./components/myLocation/WfForMyLocation";
+import WeatherSmallInfoBlock from "./components/myLocation/WeatherSmallInfoBlock";
 import DarkMode from "./components/darkMode/DarkMode";
 import axios from "axios";
 import sunny from "./assets/sunny.png";
 import clouds from "./assets/cloud.png";
 import rainy from "./assets/rainy.png";
 import snow from "./assets/snow.png";
+
 interface Data {
   name: string;
   wind: {
@@ -31,21 +25,24 @@ interface Data {
     main: string;
   }[];
 }
+
 const App = () => {
   const [data, setData] = useState<Data>();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [location, setLocation] = useState("");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${process.env.REACT_APP_KEY}`;
-  const searchLocation = (event: any) => {
-    if (event.key === "Enter") {
-      axios.get(url).then((response) => {
-        setData(response.data);
-        setLoading(false);
-      });
-      setLocation("");
-    }
+  const url = (location: string) =>
+    `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${process.env.REACT_APP_KEY}`;
+
+  const searchLocation = (location: string) => {
+    setLoading(true);
+    axios.get(url(location)).then((response) => {
+      setData(response.data);
+      setLoading(false);
+    });
+    setLocation("");
   };
+  console.log(data, "data");
   const getWeatherIcon = (weather: any) => {
     switch (weather) {
       case "Clear":
@@ -58,32 +55,21 @@ const App = () => {
         return <img className="icon-sunny" src={snow} />;
     }
   };
-  const toCelsus = (tempetature: any) => {
-    {
-      return (((tempetature - 32) * 5) / 9).toFixed();
-    }
-  };
 
-  const setDark = () => {
-    localStorage.setItem("theme", "dark");
-    document.documentElement.setAttribute("data-theme", "dark");
-  };
-
-  const setLight = () => {
-    localStorage.setItem("theme", "light");
-    document.documentElement.setAttribute("data-theme", "light");
-  };
+  const toCelsus = (tempetature: any) =>
+    (((tempetature - 32) * 5) / 9).toFixed();
 
   const storedTheme = localStorage.getItem("theme");
-
   const defaultDark = storedTheme === "dark" || storedTheme === null;
+
   const toggleTheme: ChangeEventHandler<HTMLInputElement> = (e) => {
-    if (e.target.checked) {
-      setDark();
-    } else {
-      setLight();
-    }
+    localStorage.setItem("theme", e.target.checked ? "dark" : "light");
+    document.documentElement.setAttribute(
+      "data-theme",
+      e.target.checked ? "dark" : "light"
+    );
   };
+
   return (
     <div className="App">
       <WeatherFraces
@@ -95,7 +81,14 @@ const App = () => {
         location={location}
         loading={loading}
       />
-      <WfForMyLocation />
+
+      {data && (
+        <WeatherSmallInfoBlock
+          data={data}
+          getWeatherIcon={getWeatherIcon}
+          toCelsus={toCelsus}
+        />
+      )}
 
       <DarkMode onToggle={toggleTheme} darkDefault={defaultDark} />
       <News />
